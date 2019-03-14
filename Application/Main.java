@@ -19,10 +19,16 @@ public class Main {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		// AArticle art = new Article("1", "2", 3, 4.0, 5.0);
+		AArticle art = new Article("4", "4", 4, 6.0, 6.0);
 		System.out.println("---------- Test ------------\n");
 		ArrayList<AArticle> list = new ArrayList<AArticle>();
+		
+		
 		list = DAO.readAll();
+		listToConsole(list);	
+	}
+	
+	public static void listToConsole(ArrayList<AArticle> list) {
 		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.print(list.get(i).getArticleNr() + "; ");
@@ -32,7 +38,6 @@ public class Main {
 			System.out.print(list.get(i).getPriceSell());
 			System.out.println("\n----------------------------");
 		}
-		
+	
 	}
-
 }
