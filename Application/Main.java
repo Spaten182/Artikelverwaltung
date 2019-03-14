@@ -23,7 +23,6 @@ public class Main {
 		System.out.println("---------- Test ------------\n");
 		ArrayList<AArticle> list = new ArrayList<AArticle>();
 		
-		
 		list = DAO.readAll();
 		listToConsole(list);	
 	}
