@@ -21,7 +21,7 @@ public class DAO {
 	// Attributes
 	private static String dbName = "./Artikelverwaltung/Modell/ArticleList.txt";
 	private static File file = new File(dbName);
-	private static String delimiter= "\r\n";
+	private static String delimiter= "\n";
 	
 	// Getter & Setter
 	
@@ -54,7 +54,7 @@ public class DAO {
 	 * @throws IOException 
 	 * 
 	 */
-	public static List<AArticle> readAll() throws IOException {
+	public static ArrayList<AArticle> readAll() throws IOException {
 		
 		ArrayList<AArticle> list = new ArrayList<AArticle>();
 		Scanner scanner = new Scanner(file);
@@ -63,8 +63,7 @@ public class DAO {
 			String info[] = scanner.next().split("-");
 			
 			// TODO
-			list.add(new AArticle(info[0], info[1], info[2].toInt(), info[3].con, info[4].));
-			System.out.println(scanner.next());
+			list.add(new Article(info[0], info[1], Integer.valueOf(info[2]), Double.valueOf(info[3]), Double.valueOf(info[4])));
 		}
 		scanner.close();
 		
@@ -85,6 +84,8 @@ public class DAO {
 	 *
 	 */
 	public static void delete() {
+		
+		// list.remove(index)
 		
 	}
 }
